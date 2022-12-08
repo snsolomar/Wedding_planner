@@ -17,5 +17,18 @@
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
     "vite": "^3.2.3"
-  }
+  },
+  "description": "",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snsolomar/Wedding_planner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snsolomar/Wedding_planner/issues"
+  },
+  "homepage": "https://github.com/snsolomar/Wedding_planner#readme"
 }
