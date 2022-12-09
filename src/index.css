@@ -5,12 +5,24 @@
 }
 
 .Display {
+  margin: auto;
   height: 100px;
   width: 100px;
   border: 1px solid black;
 }
 
 .nameList {
+  margin: auto;
+}
+
+.rows {
+  text-align: center;
+  margin: auto;
+  color: brown;
+}
+
+.createContainer {
+  text-align: center;
   margin: auto;
 }
 

@@ -1,14 +1,26 @@
 import { useState } from 'react'
-import NavBar from './Nav'
 import Display from './display'
+import ListView from './listView'
+import StaticNav from './Nav'
+import Guest from './Guest'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentView, setCurrentView] = useState("ListView")
+  // const [categories, setCategories] = useState(data.categories);
+  // const [currentQuestion, setCurrentQuestion] = useState({});
+  // const [answeredQuestions, setAnsweredQuestions] = useState([]);
+  // const [score, setScore] = useState(0);
+
+  let appProps = {
+    currentView,
+    setCurrentView
+  }
 
   return (
-    <div className="App">Hello
-      <NavBar />
-      <Display />
+    <div className="App">
+      <StaticNav />
+      <Display {...appProps}/>
     </div>
   )
 }
