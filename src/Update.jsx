@@ -14,7 +14,11 @@ const Update = (props) => {
             <input placeholder="relation" />
           </tr>
           <tr>
-            <Button variant="success">Update</Button>{' '}
+            <Button variant="success"
+                onClick= {() => (
+                    props.setCurrentView('ListView')
+                    )}
+            >Update</Button>{' '}
           </tr>
         </table>
       </form>

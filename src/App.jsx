@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import Display from './display'
 import ListView from './listView'
 import StaticNav from './Nav'
@@ -7,19 +7,36 @@ import Guest from './Guest'
 
 function App() {
   const [currentView, setCurrentView] = useState("ListView")
-  // const [categories, setCategories] = useState(data.categories);
+  const [guestList, setGuestList] = useState([]);
+  const [selectedGuest, setSelectedGuest] = useState('');
   // const [currentQuestion, setCurrentQuestion] = useState({});
   // const [answeredQuestions, setAnsweredQuestions] = useState([]);
   // const [score, setScore] = useState(0);
 
+  useEffect(() => {
+    fetch("http://localhost:3000/api/guest")
+    .then(response => response.json())
+    .then((data) => setGuestList(data))
+
+  },[])
+
+  // useEffect(() => {
+  //   setCurrentView('selectedGuest')
+  // }, selectedGuest)
+
+
   let appProps = {
     currentView,
-    setCurrentView
+    setCurrentView,
+    setGuestList,
+    guestList,
+    selectedGuest,
+    setSelectedGuest
   }
 
   return (
     <div className="App">
-      <StaticNav />
+      <StaticNav {...appProps}/>
       <Display {...appProps}/>
     </div>
   )

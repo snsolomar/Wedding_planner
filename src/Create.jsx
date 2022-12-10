@@ -14,7 +14,11 @@ const Create = (props) => {
           <input placeholder="relation" />
         </tr>
         <tr>
-         <Button variant="success">Create</Button>{' '}
+         <Button variant="success"
+            onClick= {() => (
+            props.setCurrentView('ListView')
+            )}
+         >Create</Button>{' '}
         </tr>
       </table>
     </form>

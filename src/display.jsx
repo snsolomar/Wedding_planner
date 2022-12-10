@@ -6,7 +6,7 @@ import Update from './Update';
 import Guest from './Guest';
 
 function Display(props) {
-    console.log(props)
+
     if (props.currentView === "ListView") {
         return (
             <Card style={{ margin: 'auto'}}>
@@ -23,6 +23,30 @@ function Display(props) {
               </Card.Body>
             </Card>
           );
+    } else if (props.currentView === "Update") {
+        return (
+            <Card style={{ margin: 'auto'}}>
+              <Card.Body>
+                <Update {...props}/>
+              </Card.Body>
+            </Card>
+          );
+    } else if (props.currentView === "Create") {
+        return (
+            <Card style={{ margin: 'auto'}}>
+                <Card.Body>
+                <Create {...props}/>
+                </Card.Body>
+            </Card>
+            );
+    } else if (props.currentView === "selectedGuest") {
+        return (
+            <Card style={{ margin: 'auto'}}>
+                <Card.Body>
+                <Guest {...props}/>
+                </Card.Body>
+            </Card>
+            );
     }
 }
 

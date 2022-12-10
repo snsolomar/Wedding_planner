@@ -1,0 +1,22 @@
+
+### GET all guest
+GET http://127.0.0.1:3000/api/guest
+
+### GET a guest by id
+GET http://127.0.0.1:3000/api/guest/2
+
+### CREATE a new guest
+POST http://127.0.0.1:3000/api/guest
+Content-Type: application/json
+
+{"name":"Michael","phone":"5551234567","relation":"friend"}
+
+
+### DELETE an guest by id
+DELETE http://127.0.0.1:3000/api/guest/9
+
+### PATCH a new Guest
+PATCH http://127.0.0.1:3000/api/guest/9
+Content-Type: application/json
+
+{"name":"Michael","phone":"5551234567","relation":"brother"}
