@@ -11,6 +11,7 @@ function StaticNav(props) {
         <Navbar.Brand href="#home"
         onClick= {() => {
             props.setUpdate(false);
+            props.setCreate(false);
             props.setSelectedGuest([])
         }
           }
@@ -19,9 +20,9 @@ function StaticNav(props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Button variant="outline-success"
-                            onClick= {(props) => {
+                            onClick= {() => {
                                 console.log('clicked');
-                                props.setSelectedGuest([])
+                                props.setCreate(true)
                                 // props.setCurrentView(ListView)
                             }}
             >Create</Button>

@@ -4,6 +4,7 @@ import ListView from './listView'
 import StaticNav from './Nav'
 import Guest from './Guest'
 import Update from './Update'
+import Create from './Create'
 
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
   const [guestList, setGuestList] = useState([]);
   const [selectedGuest, setSelectedGuest] = useState([]);
   const [update, setUpdate] =useState(false);
+  const [create, setCreate] =useState(false);
+  const [reRender, setReRender] =useState(false);
   // const [currentQuestion, setCurrentQuestion] = useState({});
   // const [answeredQuestions, setAnsweredQuestions] = useState([]);
   // const [score, setScore] = useState(0);
@@ -20,7 +23,7 @@ function App() {
     .then(response => response.json())
     .then((data) => setGuestList(data))
 
-  },[])
+  },[reRender])
 
   useEffect(() => {
     console.log('changed')
@@ -40,7 +43,10 @@ function App() {
     selectedGuest,
     setSelectedGuest,
     update,
-    setUpdate
+    setUpdate,
+    create,
+    setCreate,
+    setReRender
   }
   console.log('selectedguest', selectedGuest)
       if (selectedGuest.length !== 0 && update === true) {
@@ -48,6 +54,13 @@ function App() {
           <div className="App">
           <StaticNav {...appProps}/>
           <Update {...appProps}/>
+        </div>
+        )
+      } else if (selectedGuest.length === 0 && create === true) {
+        return (
+          <div className="App">
+          <StaticNav {...appProps}/>
+          <Create {...appProps}/>
         </div>
         )
       } else if (selectedGuest.length !== 0){
