@@ -8,7 +8,7 @@ import Guest from './Guest'
 function App() {
   const [currentView, setCurrentView] = useState("ListView")
   const [guestList, setGuestList] = useState([]);
-  const [selectedGuest, setSelectedGuest] = useState('');
+  const [selectedGuest, setSelectedGuest] = useState([]);
   // const [currentQuestion, setCurrentQuestion] = useState({});
   // const [answeredQuestions, setAnsweredQuestions] = useState([]);
   // const [score, setScore] = useState(0);
@@ -33,11 +33,13 @@ function App() {
     selectedGuest,
     setSelectedGuest
   }
+  console.log('selectedguest', selectedGuest)
 
   return (
     <div className="App">
       <StaticNav {...appProps}/>
-      <Display {...appProps}/>
+      {selectedGuest.length  === 0 ? <Display {...appProps}/> : <Guest {...appProps}/>}
+      {/* <Display {...appProps}/> */}
     </div>
   )
 }

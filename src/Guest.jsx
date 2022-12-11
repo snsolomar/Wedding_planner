@@ -5,9 +5,9 @@ const Guest = (props) => {
   return (
     <Table striped bordered hover>
       <tbody className="rows">
-        {/* <tr>{props.selectedGuest.name}</tr> */}
-        <tr>Phone</tr>
-        <tr>Relation</tr>
+        <tr>{props.selectedGuest.name}</tr>
+        <tr>{props.selectedGuest.phone}</tr>
+        <tr>{props.selectedGuest.relation}</tr>
         <Button variant="success"
                     onClick= {() => (
                         props.setCurrentView('Update')
