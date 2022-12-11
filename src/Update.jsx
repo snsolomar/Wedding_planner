@@ -15,9 +15,12 @@ const Update = (props) => {
           </tr>
           <tr>
             <Button variant="success"
-                onClick= {() => (
-                    props.setCurrentView('ListView')
-                    )}
+                onClick= {() => {
+                    props.setUpdate(false);
+                    props.setSelectedGuest([])
+                }
+
+                    }
             >Update</Button>{' '}
           </tr>
         </table>

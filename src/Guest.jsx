@@ -10,7 +10,7 @@ const Guest = (props) => {
         <tr>{props.selectedGuest.relation}</tr>
         <Button variant="success"
                     onClick= {() => (
-                        props.setCurrentView('Update')
+                        props.setUpdate(true)
                         )}
         >Update</Button>{" "}
       </tbody>

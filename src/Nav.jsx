@@ -2,15 +2,18 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button'
+import ListView from './listView';
 
 function StaticNav(props) {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="#home"
-        onClick= {() => (
+        onClick= {() => {
+            props.setUpdate(false);
             props.setSelectedGuest([])
-          )}
+        }
+          }
         >Home</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -19,6 +22,7 @@ function StaticNav(props) {
                             onClick= {(props) => {
                                 console.log('clicked');
                                 props.setSelectedGuest([])
+                                // props.setCurrentView(ListView)
                             }}
             >Create</Button>
             <Button variant="outline-secondary">Delete</Button>
