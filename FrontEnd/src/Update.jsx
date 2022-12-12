@@ -29,7 +29,7 @@ const Update = (props) => {
             phone: phone,
             relation: relation
         };
-        fetch("http://localhost:3000/api/guest/" + (guestId), {
+        fetch(`${url}/api/guest/${guestId}`, {
             method: "PATCH",
             headers: {
                 "Content-type": "application/json"

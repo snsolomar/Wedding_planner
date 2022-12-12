@@ -15,13 +15,15 @@ function App() {
   const [create, setCreate] =useState(false);
   const [reRender, setReRender] =useState(false);
   const [guestId, setGuestId] = useState();
+  let url = 'https://api-server-6ng8.onrender.com';
+  // let url = 'http://localhost:3000'
 
   // const [currentQuestion, setCurrentQuestion] = useState({});
   // const [answeredQuestions, setAnsweredQuestions] = useState([]);
   // const [score, setScore] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/guest")
+    fetch(`${url}/api/guest`)
     .then(response => response.json())
     .then((data) => setGuestList(data))
 
@@ -50,7 +52,8 @@ function App() {
     setCreate,
     setReRender,
     guestId,
-    setGuestId
+    setGuestId,
+    url
   }
   // console.log('selectedguest', selectedGuest)
       if (selectedGuest.length !== 0 && update === true) {

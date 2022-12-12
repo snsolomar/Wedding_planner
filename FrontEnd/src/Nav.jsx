@@ -16,7 +16,7 @@ function StaticNav(props) {
     
 
     const handleDelete = async() => {
-        await fetch(`http://localhost:3000/api/guest/${guestId}`, {
+        await fetch(`${url}/api/guest/${guestId}`, {
             method: "DELETE",
             mode: "cors"
         })
