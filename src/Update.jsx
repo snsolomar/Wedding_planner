@@ -1,10 +1,18 @@
 import Button from 'react-bootstrap/Button';
+import { useState,useEffect } from 'react'
 
 const Update = (props) => {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [relation, setRelation] = useState("");
-    const [guestId, setGuestId] =useState("")
+    const [guestId, setGuestId] = useState()
+
+    const handleId = () => {
+        console.log(props.selectedGuest.id)
+        setGuestId(props.selectedGuest.id)
+        console.log(guestId)
+    }
+    
     const handleName = (e) => {
         setName(e.target.value)
         console.log(e.target.value)
@@ -16,7 +24,7 @@ const Update = (props) => {
         setRelation(e.target.value)
     }
     const handlePost = () => {
-        const newGuest = {
+        const newGuestInfo = {
             name: name,
             phone: phone,
             relation: relation
@@ -26,7 +34,7 @@ const Update = (props) => {
             headers: {
                 "Content-type": "application/json"
             },
-            body: JSON.stringify(newGuest)
+            body: JSON.stringify(newGuestInfo)
         })
         .then(response => response.json())
         .then((data) => console.log(data))
@@ -50,8 +58,9 @@ const Update = (props) => {
           <tr>
             <Button variant="success"
                 onClick= {() => {
-                    handlePost();
-                    props.setUpdate(false);
+                    handleId()
+                    handlePost()
+                    props.setUpdate(false)
                     props.setSelectedGuest([])
                 }
 

@@ -14,6 +14,8 @@ function App() {
   const [update, setUpdate] =useState(false);
   const [create, setCreate] =useState(false);
   const [reRender, setReRender] =useState(false);
+  const [guestId, setGuestId] = useState();
+
   // const [currentQuestion, setCurrentQuestion] = useState({});
   // const [answeredQuestions, setAnsweredQuestions] = useState([]);
   // const [score, setScore] = useState(0);
@@ -46,9 +48,11 @@ function App() {
     setUpdate,
     create,
     setCreate,
-    setReRender
+    setReRender,
+    guestId,
+    setGuestId
   }
-  console.log('selectedguest', selectedGuest)
+  // console.log('selectedguest', selectedGuest)
       if (selectedGuest.length !== 0 && update === true) {
         return (
           <div className="App">
