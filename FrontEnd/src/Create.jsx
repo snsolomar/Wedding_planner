@@ -21,7 +21,7 @@ const Create = (props) => {
             phone: phone,
             relation: relation
         };
-        fetch(`${url}/api/guest`, {
+        fetch(`${props.url}/api/guest`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
