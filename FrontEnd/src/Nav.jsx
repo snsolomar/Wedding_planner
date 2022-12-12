@@ -10,11 +10,7 @@ function StaticNav(props) {
 
     const handleId = () => {
         console.log(props.selectedGuest.id)
-        setGuestId(props.selectedGuest.id)
-        handleDelete()
-        props.setGuestId()
-        props.setUpdate(false)
-        
+        setGuestId(props.selectedGuest.id)        
     }
     
 
@@ -52,9 +48,9 @@ function StaticNav(props) {
                             onClick= {() => {
                                 handleId()
                                 console.log(guestId)
-                                // handleDelete()
-                                // props.setGuestId()
-                                // props.setUpdate(false)
+                                handleDelete()
+                                props.setGuestId()
+                                props.setUpdate(false)
                                 
                             }}
                             >Delete</Button>
